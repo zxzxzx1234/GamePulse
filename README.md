@@ -4,7 +4,11 @@ A cloud platform for tracking video game prices and popularity, with personalize
 
 ## About
 
-Game prices change often, and sales come and go quickly. GamePulse automatically and periodically collects the price and the number of active players for a list of about 50 games (public Steam data), keeps the history, and notifies users in the app when a game on their wishlist drops below their target price.
+Game prices change often, and sales come and go quickly. Anyone waiting for a good deal has to keep checking the store manually, and it is hard to tell whether a discount is actually good or just looks good, since stores only show the current price.
+
+GamePulse takes care of that. It automatically and periodically collects the price and the number of active players for a list of about 50 games (public Steam data) and keeps the full history. Users can see how a game's price and popularity have changed over time, compare the current price with the all-time low, and build a personal wishlist with price alerts. When a game drops below their target price, they get a notification in the app, so they never have to check manually again.
+
+Behind the scenes, GamePulse is built as a cloud-native application on Microsoft Azure. Data collection and alert checks run in the background as serverless functions, decoupled through a message queue, while the web app stays responsive for users. All components communicate over a private network, authenticate with managed identities instead of stored passwords, and are monitored end to end. The whole infrastructure is defined as code and deployed automatically.
 
 ## Features
 
